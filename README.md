@@ -1,2 +1,2 @@
-# MERN-Backend-Template
-A template for the backend for the MERN stack
+# MERN-Backend-Timesheet App
+A web application that lets you generate timesheets on a project while you work
