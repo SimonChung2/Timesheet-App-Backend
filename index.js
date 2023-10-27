@@ -10,6 +10,9 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || "8888";
 
+//set up jsonwebtokens
+const jwt=require('jsonwebtoken');
+
 //MongoDB
 const { MongoClient } = require("mongodb");
 const dbUrl = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PWD}@${process.env.DB_HOST}/?retryWrites=true&w=majority`
