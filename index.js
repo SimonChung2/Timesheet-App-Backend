@@ -34,19 +34,19 @@ app.listen(port, () => {
 
 //create connection to database
 async function connection() {
-    db = client.db("skillmasterydb"); //Change to the name of your mongo database
+    db = client.db("timesheetdb"); //Change to the name of your mongo database
     return db;
 }
 
-app.get("/tutors", async (request, response) => {
-    let tutors = await getAllTutors();
-    response.json(tutors); //everytime a request is sent to /tutors, a response of an array of tutor json objects is received
+app.get("/regusers", async (request, response) => {
+    let regusers = await getAllRegUsers();
+    response.json(regusers); //everytime a request is sent to /regusers, a response of an array of registered user json objects is received
 }) 
 
-async function getAllTutors() {
+async function getAllRegUsers() {
     db = await connection();
-    let results = db.collection("tutors").find({}); //Change "tutors" to name of your mongodb collection
+    let results = db.collection("registeredusers").find({}); //Change "registeredusers" to name of your mongodb collection
     res = await results.toArray();
-    return res; //returns an array of all the tutors as json objects
+    return res; //returns an array of all the registered users as json objects
 }
 
