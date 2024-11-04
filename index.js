@@ -132,6 +132,7 @@ app.get("/activities", async (request, response) => {
 
 app.post("/activities", async (request, response) => {
     const { username, activityName, timeTaken, date } = request.body;
+    console.log("Received activity data:", request.body);
 
     if (!username || !activityName || !timeTaken || !date) {
         return response.status(400).json({ message: 'Missing required fields' });
